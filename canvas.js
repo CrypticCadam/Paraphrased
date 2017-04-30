@@ -1,4 +1,3 @@
-'esversion: 6';
 var canvas0 = document.getElementById('canvas0'),
     canvas1 = document.getElementById('canvas1'),
     canvas2 = document.getElementById('canvas2'),
