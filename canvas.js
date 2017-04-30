@@ -72,7 +72,6 @@ function gameloop(time){
             addRectButton("test",50,300,100,50,0,function(){
                 buttons={};
                 ctx2.clearRect(0,0,canvas2.width,canvas2.height);
-                ctx2.
                 ctx2.fillText("Oh my god I made a button do a thing, so coooool.",20,100);
                 setTimeout(function(){
                     ctx2.clearRect(0,0,canvas2.width,canvas2.height);
