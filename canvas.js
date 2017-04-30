@@ -5,20 +5,25 @@ var canvas0 = document.getElementById('canvas0'),
     ctx0 = canvas0.getContext('2d'),
     ctx1 = canvas1.getContext('2d'),
     ctx2 = canvas2.getContext('2d');
-canvas0.width = 1600;
-canvas0.height= 900;
-canvas1.width = 1600;
-canvas1.height= 900;
-canvas2.width = 1600;
-canvas2.height= 900;
+canvas0.width = 800;
+canvas0.height= 450;
+canvas1.width = 800;
+canvas1.height= 450;
+canvas2.width = 800;
+canvas2.height= 450;
 
 //Lost my code twice. FML.
 
 //Welp, here's a canvas button. Kill me.
 let buttons={};
-function addRectButton(name,x,y,w,h,z,func,style){
-    ctx2.fillStyle=style || ctx2.fillStyle;
+function addRectButton(name,x,y,w,h,z,func,style,text){
+    var oldStyle = ctx2.fillStyle;
+    ctx2.fillStyle = style || ctx2.fillStyle;
     ctx2.fillRect(x,y,w,h);
+    ctx2.fillStyle = oldStyle;
+    ctx2.textAlign = "center";
+    ctx2.textBaseline = "middle";
+    ctx2.fillText(text || "",x+w/2,y+h/2);
     buttons[name]=[x,y,w,h,z || 0,func,false];
     return name;
 }
@@ -57,25 +62,39 @@ function gameloop(time){
     switch(state){
         case "testing":
             
-            state="menu init";
+            state="setup";
             break;
-        case "menu init":
+        case "setup":
+            ctx2.font = "16pxGeorgia"
             ctx2.fillText("Testing, testing, 123",20,100);
-            addRectButton("test",100,600,100,50,0,function(){
+            addRectButton("test",50,300,100,50,0,function(){
+                delete buttons.test;
                 ctx2.clearRect(0,0,canvas2.width,canvas2.height);
                 ctx2.fillText("Oh my god I made a button do a thing, so coooool.",20,100);
                 setTimeout(function(){
                     ctx2.clearRect(0,0,canvas2.width,canvas2.height);
-                    state="menu init";
-                },6000);
-            });
+                    state = "menu init";
+                },4000);
+            },"0x000FFF","Button");
+            addRectButton("othertest",175,300,100,50,0,function(){
+                delete buttons.othertest;
+                ctx2.clearRect(0,0,canvas2.width,canvas2.height);
+                ctx2.fillText("MOAR THINGS",20,100);
+                setTimeout(function(){
+                    ctx2.clearRect(0,0,canvas2.width,canvas2.height);
+                    state = "menu init";
+                },4000);
+            },"0xFFF000","Other Button");
             state="menu loop";
             break;
         case "menu loop":
-            // 'Sprobably some idle animation or somethin', not much would be put in a menu to loop.
+            // We just kinda wait here until a button makes something happen
+            
+            // This kind of setup is usually used for realtime games, rather than button-action games.
+            // But realtime might be added later for whatever reason (MINIGAMES), so let's do it like this
             break;
         default:
-            
+            // Something fuckin' broke
     }
     
     requestAnimationFrame(gameloop);
