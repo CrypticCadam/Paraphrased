@@ -1,3 +1,4 @@
+'esversion: 6';
 var canvas0 = document.getElementById('canvas0'),
     canvas1 = document.getElementById('canvas1'),
     canvas2 = document.getElementById('canvas2'),
@@ -23,7 +24,7 @@ function addRectButton(name,x,y,w,h,z,func,style){
 }
 
 function getMousePos(e) {
-    var rect = canvas.getBoundingClientRect();
+    var rect = canvas2.getBoundingClientRect();
     return [e.clientX-rect.left,
             e.clientY-rect.top];
 }
@@ -33,9 +34,9 @@ function isInside(x,y,shape,round){
     }
     return x>=shape[0] && x<=shape[0]+shape[2] && y>=shape[1] && y<=shape[1]+shape[3] ;
 }
-canvas.addEventListener('click',function(e){
+canvas2.addEventListener('click',function(e){
     var [x,y] = getMousePos(e); //This is how you get multiple variables from one function
-    var funcs,z = [],Number.NEGATIVE_INFINITY; // -INFINITY is always less than everything else
+    var funcs = [],z = Number.NEGATIVE_INFINITY; // -INFINITY is always less than everything else
     for(let b in buttons){
         if(isInside(x,y,buttons[b])){ //If button has priority and is also being clicked on
             if(buttons[b][4]>z){
