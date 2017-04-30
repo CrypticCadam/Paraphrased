@@ -60,8 +60,10 @@ function gameloop(time){
             state="menu init";
             break;
         case "menu init":
+            ctx2.fillText("Testing, testing, 123",20,100);
             addRectButton("test",100,600,100,50,0,function(){
-                ctx2.fillText("Oh my god I made a button do a thing, so coooool.",10,50);
+                ctx2.clearRect(0,0,canvas2.width,canvas2.height);
+                ctx2.fillText("Oh my god I made a button do a thing, so coooool.",20,100);
                 setTimeout(function(){
                     ctx2.clearRect(0,0,canvas2.width,canvas2.height);
                     state="menu init";
