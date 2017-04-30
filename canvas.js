@@ -5,12 +5,12 @@ var canvas0 = document.getElementById('canvas0'),
     ctx0 = canvas0.getContext('2d'),
     ctx1 = canvas1.getContext('2d'),
     ctx2 = canvas2.getContext('2d');
-canvas0.width = 640;
-canvas0.height= 480;
-canvas1.width = 640;
-canvas1.height= 480;
-canvas2.width = 640;
-canvas2.height= 480;
+canvas0.width = 1600;
+canvas0.height= 900;
+canvas1.width = 1600;
+canvas1.height= 900;
+canvas2.width = 1600;
+canvas2.height= 900;
 
 //Lost my code twice. FML.
 
