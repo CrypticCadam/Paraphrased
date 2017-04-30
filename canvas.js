@@ -8,5 +8,5 @@ ctx.lineTo(50,50);
 ctx.stroke();
 ctx.beginPath();
 ctx.moveTo(100,100);
-ctx.arc(100,100,20,Math.PI);
+ctx.arc(100,100,20,0,Math.PI); //x,y,radius,begin,end
 ctx.stroke();
