@@ -24,8 +24,8 @@ function addRectButton(name,x,y,w,h,z,func,style,text){
     ctx2.textAlign = "center";
     ctx2.textBaseline = "middle";
     ctx2.fillText(text || "",x+w/2,y+h/2);
-    ctx2.textAlign = "Start";
-    ctx2.textBaseline = "Alphabetic";
+    ctx2.textAlign = "start";
+    ctx2.textBaseline = "alphabetic";
     buttons[name]=[x,y,w,h,z || 0,func,false];
     return name;
 }
@@ -70,7 +70,7 @@ function gameloop(time){
             ctx2.font = "16pxGeorgia"
             ctx2.fillText("Testing, testing, 123",20,100);
             addRectButton("test",50,300,100,50,0,function(){
-                delete buttons.test;
+                buttons={};
                 ctx2.clearRect(0,0,canvas2.width,canvas2.height);
                 ctx2.
                 ctx2.fillText("Oh my god I made a button do a thing, so coooool.",20,100);
@@ -78,16 +78,16 @@ function gameloop(time){
                     ctx2.clearRect(0,0,canvas2.width,canvas2.height);
                     state = "setup";
                 },4000);
-            },"0x000FFF","Button");
+            },"#000FFF","Button");
             addRectButton("othertest",175,300,100,50,0,function(){
-                delete buttons.othertest;
+                buttons={};
                 ctx2.clearRect(0,0,canvas2.width,canvas2.height);
                 ctx2.fillText("MOAR THINGS",20,100);
                 setTimeout(function(){
                     ctx2.clearRect(0,0,canvas2.width,canvas2.height);
                     state = "setup";
                 },4000);
-            },"0xFFF000","Other Button");
+            },"#FFF000","Other Button");
             state="menu loop";
             break;
         case "menu loop":
