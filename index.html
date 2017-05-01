@@ -24,11 +24,15 @@
   <h1 style ="display: inline">Paraphrased</h1>
   <p style = "display: inline">Fan game of Paraphore by Cryptic and J0SLAN</p>
   <p>Buttons exist. Now to add text input.</p>
+  <input type = "text" id = "textinput" onkeypress="if(e.keyCode===13){e.preventDefault();ButtonFunc();}"
+         value = "This is where you type stuff, like yer name.">
+  <button onclick = "ButtonFunc()" style = "display: inline">Do the thing with the stuff.</button>
   <div id = "container" class = "container">
     <canvas id = "canvas0" z-index = "0" oncontextmenu="return false;">Your browser can't use canvas graphics!</canvas>
     <canvas id = "canvas1" z-index = "1" oncontextmenu="return false;"></canvas>
     <canvas id = "canvas2" z-index = "2" oncontextmenu="return false;"></canvas>
   </div>
-  <script type = "text/javascript" src = "canvas.js" onClick=""></script>
+  <script>function ButtonFunc(){}</script>
+  <script type = "text/javascript" src = "canvas.js" onClick = ""></script>
 </body>
 </html>
