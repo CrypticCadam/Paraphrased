@@ -14,6 +14,7 @@ canvas2.height= 450;
 
 //Times lost everything: 3
 //Times hating own life: 3
+//Times wondering how all this even works: (Too many to count!)
 let buttons={};
 function addRectButton(name,x,y,w,h,z,func,style,text){
     var oldStyle = ctx2.fillStyle;
