@@ -12,8 +12,8 @@ canvas1.height= 450;
 canvas2.width = 800;
 canvas2.height= 450;
 
-//Times lost everything: 3
-//Times hating own life: 3
+//Times lost everything: 4
+//Times hating own life: 4
 //Times wondering how all this even works: (Too many to count!)
 
 
