@@ -1,38 +1,39 @@
 <html>
 <head>
-  <title>Paraphrased</title>
-  <style type = "text/css">
-    body {
-      user-select: none;
-     -ms-user-select: none;
-     -webkit-user-select: none;
-     -khtml-user-select: none;
-     -moz-user-select: none;
-    }
-    .container {
-      position: relative;
-    }
-    .container > canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      border: 5px dashed blue;
-    }
-  </style>
+	<meta charset="utf-8"/>
+	<title>Paraphrased</title>
+	<style type = "text/css">
+		body {
+			user-select: none;
+		 -ms-user-select: none;
+		 -webkit-user-select: none;
+		 -khtml-user-select: none;
+		 -moz-user-select: none;
+		}
+		.container {
+			position: relative;
+		}
+		.container > canvas {
+			position: absolute;
+			top: 0;
+			left: 0;
+			border: 5px dashed blue;
+		}
+	</style>
 </head>
 <body>
-  <h1 style ="display: inline">Paraphrased</h1>
-  <p style = "display: inline">Fan game of Paraphore by Cryptic and J0SLAN</p>
-  <p>Buttons exist. Now to add text input.</p>
-  <input type = "text" id = "textinput" onkeypress="if(e.keyCode===13){e.preventDefault();ButtonFunc();}"
-         value = "You can type your name here, soon.">
-  <button onclick = "ButtonFunc()" style = "display: inline">Do the thing with the stuff.</button>
-  <div id = "container" class = "container">
-    <canvas id = "canvas0" z-index = "0" oncontextmenu="return false;">Your browser can't use canvas graphics!</canvas>
-    <canvas id = "canvas1" z-index = "1" oncontextmenu="return false;"></canvas>
-    <canvas id = "canvas2" z-index = "2" oncontextmenu="return false;"></canvas>
-  </div>
-  <script>function ButtonFunc(){}</script>
-  <script type = "text/javascript" src = "canvas.js" onClick = ""></script>
+	<h1 style ="display: inline">Paraphrased</h1>
+	<p style = "display: inline">Fan game of Paraphore by Cryptic and J0SLAN</p>
+	<p>Buttons exist. Now to add text input.</p>
+	<input type = "text" id = "textinput" size = "100" onkeypress="if(e.keyCode===13){e.preventDefault();ButtonFunc();}"
+				 value = "You can type your name here, soon.">
+	<button onclick = "ButtonFunc()" style = "display: inline">Do the thing with the stuff.</button>
+	<div id = "container" class = "container">
+		<canvas id = "canvas0" z-index = "0" oncontextmenu="return false;">Your browser can't use canvas graphics!</canvas>
+		<canvas id = "canvas1" z-index = "1" oncontextmenu="return false;"></canvas>
+		<canvas id = "canvas2" z-index = "2" oncontextmenu="return false;"></canvas>
+	</div>
+	<script>function ButtonFunc(){}</script>
+	<script type = "text/javascript" src = "canvas.js" onClick = ""></script>
 </body>
 </html>
